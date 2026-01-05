@@ -4,7 +4,7 @@ import { Logger } from '@nestjs/common';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
-  process.title = 'gateway';
+  process.title = 'catalog';
 
   const logger = new Logger('CatalogBootstrap');
 
@@ -15,6 +15,7 @@ async function bootstrap() {
       transport: Transport.TCP,
       options: {
         host: '0.0.0.0',
+        port,
       },
     },
   );
@@ -22,6 +23,6 @@ async function bootstrap() {
 
   await app.listen();
 
-  logger.log(`🚀 Gateway service is running on port ${port}`);
+  logger.log(`🚀 Catalog service is running on port ${port}`);
 }
 bootstrap();
