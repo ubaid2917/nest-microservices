@@ -7,9 +7,8 @@ async function bootstrap() {
   process.title = 'catalog';
 
   const logger = new Logger('CatalogBootstrap');
-
-  const port = Number(process.env.CATALOG_TCP_PORT) || 4011;  
-  const rmqUrl = process.env.RABBITMQ_URL ?? "amqp://localhost:5671";
+ 
+  const rmqUrl = process.env.RABBITMQ_URL ?? "amqp://localhost:5672";
   const queue = process.env.CATALOG_QUEUE ?? "catalog_queue";
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     CatalogModule,
