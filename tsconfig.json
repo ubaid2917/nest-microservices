@@ -1,4 +1,6 @@
+
 {
+  
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
@@ -21,6 +23,8 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@core/*": ["apps/nest-microservices/src/*"]
+    }
   }
 }

@@ -7,7 +7,7 @@ async function bootstrap() {
   process.title = 'test'; 
    
   const logger = new Logger('TestBootstrap'); 
-  const port = Number(process.env.TEST_PORT) || 4014;
+  const port = Number(process.env.TEST_TCP_PORT);
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     TestModule, 
     {
