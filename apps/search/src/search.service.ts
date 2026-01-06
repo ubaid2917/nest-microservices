@@ -2,7 +2,12 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SearchService {
-  getHello(): string {
-    return 'Hello World!';
+   ping() {
+    return {
+      message: 'pong',
+      service: 'search',
+      date: new Date(),
+      
+    };
   }
 }
