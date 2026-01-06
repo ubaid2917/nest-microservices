@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
+import { CoreConfigModule } from '@core/core-config.module';
 import { CatalogController } from './catalog.controller';
 import { CatalogService } from './catalog.service';
 
 @Module({
-  imports: [],
+  imports: [CoreConfigModule],
   controllers: [CatalogController],
   providers: [CatalogService],
 })
