@@ -6,6 +6,9 @@
     "deleteOutDir": true,
     "webpack": true
   },
+  "generateOptions": {
+    "spec": false
+  },
   "monorepo": true,
   "root": ".",
   "projects": {
@@ -52,6 +55,15 @@
       "sourceRoot": "apps/search/src",
       "compilerOptions": {
         "tsConfigPath": "apps/search/tsconfig.app.json"
+      }
+    },
+    "test": {
+      "type": "application",
+      "root": "apps/test",
+      "entryFile": "main",
+      "sourceRoot": "apps/test/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test/tsconfig.app.json"
       }
     }
   }
