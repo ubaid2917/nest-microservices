@@ -17,5 +17,9 @@ export class UserService {
             user,
             {upsert: true, new: true}
         )
+    } 
+
+    async findByClerkUserId(clerkUserId: string){
+        return this.userModel.findOne({clerkUserId})
     }
 }
