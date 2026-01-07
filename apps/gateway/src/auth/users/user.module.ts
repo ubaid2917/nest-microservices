@@ -10,6 +10,6 @@ import { Model } from 'mongoose';
   ],
   controllers: [],
   providers: [UserService],
-  exports: [],
+  exports: [UserService],
 })
 export class UsersModule {}
