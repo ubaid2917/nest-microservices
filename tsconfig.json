@@ -1,6 +1,4 @@
-
 {
-  
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
@@ -24,7 +22,17 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@core/*": ["apps/nest-microservices/src/*"]
+      "@app/rpc": [
+        "apps/libs/rpc/src",
+        "apps/libs/rpc/src"
+      ],
+      "@app/rpc/*": [
+        "apps/libs/rpc/src/*",
+        "apps/libs/rpc/src/*"
+      ],
+      "@core/*": [
+        "apps/nest-microservices/src/*"
+      ]
     }
   }
 }

@@ -4,7 +4,9 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateUserDto } from './users/dtos/create-user.dto';
 import bcryprt from 'bcrypt';
-import { UserType } from './enums/user-type.enum';
+import { UserType } from './enums/user-type.enum';  
+import { rpcError } from '../../../libs/rpc/src/errors/rpc.error';
+
 
 @Injectable()
 export class AuthService {
@@ -52,7 +54,7 @@ export class AuthService {
         role: UserType.USER,
       };
     } catch (err) {
-      throw new UnauthorizedException('Invalid or expired token');
+       rpcError('UNAUTHORISED', 'Invalid token');
     }
   }
 }

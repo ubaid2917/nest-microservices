@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { GatewayModule } from './gateway.module';
 import { Logger } from '@nestjs/common';
+import { RpcToHttpExceptionFilter } from '../../libs/rpc/src/errors/rpc-exception.filter';
 
 async function bootstrap() {
   process.title = 'gateway';
@@ -9,7 +10,8 @@ async function bootstrap() {
 
   const app = await NestFactory.create(GatewayModule);
 
-  app.enableShutdownHooks();
+  app.enableShutdownHooks(); 
+  app.useGlobalFilters(new RpcToHttpExceptionFilter())
 
   const port = Number(process.env.GATEWAY_PORT) || 3000;
 
