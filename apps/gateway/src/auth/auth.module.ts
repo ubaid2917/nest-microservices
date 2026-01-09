@@ -17,4 +17,4 @@ providers: [AuthService,
 ],
 exports: [AuthService]
 })
-export class DummyModule {}
+export class AuthModule {}

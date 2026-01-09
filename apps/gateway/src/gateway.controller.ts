@@ -2,6 +2,7 @@ import { Controller, Get, Inject } from '@nestjs/common';
 import { GatewayService } from './gateway.service';
 import { ClientProxy } from '@nestjs/microservices';
 import { firstValueFrom, from } from 'rxjs';
+import { Public } from './auth/decorators/public.decorator';
 
 @Controller()
 export class GatewayController {
@@ -30,7 +31,7 @@ export class GatewayController {
       };
     }
   }
-
+  @Public()
   @Get('health')
   async health() {
     const [catalog, search, media] = await Promise.all([
