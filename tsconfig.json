@@ -22,14 +22,8 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/rpc": [
-        "apps/libs/rpc/src",
-        "apps/libs/rpc/src"
-      ],
-      "@app/rpc/*": [
-        "apps/libs/rpc/src/*",
-        "apps/libs/rpc/src/*"
-      ],
+       "@app/rpc": ["libs/rpc/src/index.ts"],
+      "@app/rpc/*": ["libs/rpc/src/*"],
       "@core/*": [
         "apps/nest-microservices/src/*"
       ]

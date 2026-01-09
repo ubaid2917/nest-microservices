@@ -5,7 +5,7 @@ import { Model } from 'mongoose';
 import { CreateUserDto } from './users/dtos/create-user.dto';
 import bcryprt from 'bcrypt';
 import { UserType } from './enums/user-type.enum';  
-import { rpcError } from '../../../libs/rpc/src/errors/rpc.error';
+import { rpcError } from '@app/rpc';
 
 
 @Injectable()
@@ -54,7 +54,7 @@ export class AuthService {
         role: UserType.USER,
       };
     } catch (err) {
-       rpcError('UNAUTHORISED', 'Invalid token');
+       rpcError('UNAUTHORIZED', 'Invalid token');
     }
   }
 }

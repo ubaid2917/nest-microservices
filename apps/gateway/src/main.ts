@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { GatewayModule } from './gateway.module';
 import { Logger } from '@nestjs/common';
-import { RpcToHttpExceptionFilter } from '../../libs/rpc/src/errors/rpc-exception.filter';
+import { RpcToHttpExceptionFilter } from '../../../libs/rpc/src/errors/rpc-exception.filter';
 
 async function bootstrap() {
   process.title = 'gateway';

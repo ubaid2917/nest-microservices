@@ -3,7 +3,8 @@ import { AuthService } from "./auth.service";
 import { CurrentUser } from "./decorators/current-user.decorator";
 import * as authTypes from "./auth.types";
 import { Public } from "./decorators/public.decorator";
-import { rpcError } from '../../../libs/rpc/src/errors/rpc.error';
+import { rpcError } from '@app/rpc';
+
 
 
 
@@ -22,7 +23,7 @@ export class AuthController {
 @Get('test')
 async test(){
   
-  rpcError('NOT_FOUND', 'User not found');
+  rpcError('UNAUTHORIZED', 'User not found');
 }
 
 }
