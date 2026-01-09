@@ -11,7 +11,7 @@ import { UserService } from '../users/user.service';
 import { IS_PUBLIC_KEY } from '../decorators/public.decorator';
 import { REQUIRED_ROLE_KEY } from '../decorators/admin.decorator';
 import { UserType } from '../enums/user-type.enum';
-
+``
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
